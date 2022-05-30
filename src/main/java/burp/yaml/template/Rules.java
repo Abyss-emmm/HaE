@@ -1,8 +1,9 @@
 package burp.yaml.template;
 
-import burp.yaml.template.Rule;
 
-import java.util.List;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
 
 /**
  * @author LinChen
@@ -31,7 +32,19 @@ public class Rules {
     public void setRuleObj(){
 
     }
+    public  Object[][] getRulesObject(){
+        int length = this.rule.size();
+        Object[][]result = new Object[length][];
+        for (int i=0;i<length;i++){
+            result[i] = this.rule.get(i).getRuleObject();
+        }
+        return result;
+    }
     public String toString(){
         return "{ type: "+type+"\n config: "+ rule +"}\n";
+    }
+
+    public Rules() {
+        this.rule = new ArrayList<>();
     }
 }

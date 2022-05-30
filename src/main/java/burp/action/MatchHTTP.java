@@ -1,9 +1,9 @@
 package burp.action;
 
+import burp.yaml.Config;
 import jregex.Matcher;
 import jregex.Pattern;
 import jregex.REFlags;
-import burp.yaml.LoadConfig;
 
 /**
  * @author EvilChen
@@ -11,9 +11,9 @@ import burp.yaml.LoadConfig;
 
 public class MatchHTTP {
     // 匹配后缀
-    LoadConfig lc = new LoadConfig();
+    Config config = new Config();
     public boolean matchSuffix(String str) {
-        Pattern pattern = new Pattern(String.format("[\\w]+[\\.](%s)", lc.getExcludeSuffix()), REFlags.IGNORE_CASE);
+        Pattern pattern = new Pattern(String.format("[\\w]+[\\.](%s)",config.getExcludeSuffix()), REFlags.IGNORE_CASE);
         Matcher matcher = pattern.matcher(str);
         return matcher.find();
     }

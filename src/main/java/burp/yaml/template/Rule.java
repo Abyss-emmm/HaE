@@ -15,6 +15,19 @@ public class Rule {
     private String Engine;
     private String Scope;
 
+    public  Rule(){
+
+    }
+    public Rule(Boolean loaded,String name,String regex,String color,String scope,String engine){
+        this.Loaded = loaded;
+        this.Name = name;
+        this.Regex = regex;
+        this.Color = color;
+        this.Scope = scope;
+        this.Engine = engine;
+
+    }
+
     public Boolean getLoaded() {
         return Loaded;
     }

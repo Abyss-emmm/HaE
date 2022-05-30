@@ -1,6 +1,6 @@
 package burp.action;
 
-import burp.Config;
+import burp.yaml.Config;
 import java.util.ArrayList;
 import java.util.List;
 
